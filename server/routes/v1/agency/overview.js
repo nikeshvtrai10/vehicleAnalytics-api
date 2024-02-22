@@ -16,4 +16,10 @@ router.route('/time')
 router.route('/day')
     .post(overview.getPeakDay);
 
+router.route('/vehicletype')
+    .post(overview.getVehicleType);
+
+router.route('/dwelltime')
+    .post(overview.getDwellTime);
+
 module.exports = router;

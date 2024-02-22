@@ -13,11 +13,15 @@ module.exports = async (req, res, next) => {
     if (req.decoded.permissions.includes(reqPermission)) {
       const fromDate = req.body.from_date;
       const toDate = req.body.to_date;
+      const campaignId = req.body.campaign_id;
+      const client_id = req.body.client_id;
       if (fromDate && toDate) {
         const data = await overviewService.getOverviewSummary(
           address,
           fromDate,
-          toDate
+          toDate,
+          campaignId,
+          client_id,
         );
         res.status(httpStatus.OK).json({
           message: 'Success',

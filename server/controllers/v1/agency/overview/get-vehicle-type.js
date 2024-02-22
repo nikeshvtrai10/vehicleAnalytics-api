@@ -16,7 +16,7 @@ module.exports = async (req, res, next) => {
       const campaignId = req.body.campaign_id;
       const client_id = req.body.client_id;
       if (fromDate && toDate) {
-        const data = await overviewService.getDailyReach(
+        const data = await overviewService.getVehicleType(
           address,
           fromDate,
           toDate,
