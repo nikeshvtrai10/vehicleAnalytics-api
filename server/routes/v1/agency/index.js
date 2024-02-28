@@ -5,6 +5,7 @@ const displayRoute = require("./display");
 const agencyMemberRoute = require("./agencyMember");
 const timeslotRoute = require("./timeslot");
 const overviewRoute = require("./overview");
+const reportAnalysisRoute = require("./reportAnalysis")
 
 const router = new require("express").Router();
 
@@ -28,5 +29,6 @@ router.use("/display", displayRoute);
 router.use("/agencyMember", agencyMemberRoute);
 router.use("/timeslot", timeslotRoute);
 router.use("/overview", overviewRoute);
+router.use("/report", reportAnalysisRoute);
 
 module.exports = router;
