@@ -20,7 +20,7 @@ module.exports = async ({agencyId, clientId, campaignId}) => {
         {
           model:Advertisement,
           as:"Advertisements",
-          attributes:["name"],
+          attributes:["id", "name"],
           required:true,
         },
         {
