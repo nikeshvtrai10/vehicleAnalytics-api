@@ -18,7 +18,7 @@ module.exports = async (address, fromDate, toDate, campaignId, client_id, advert
       
       console.log(config);
 
-    const res1 = await axios.post(`http://${address}:5001/report`, {
+    const res1 = await axios.post(`http://${address}:5000/report`, {
         from_date: fromDate,
         to_date: toDate,
         campaign_id: campaignId,
@@ -28,7 +28,7 @@ module.exports = async (address, fromDate, toDate, campaignId, client_id, advert
         config
     );
 
-    const res2 = await axios.post(`http://${address}:5001/report/daily`, {
+    const res2 = await axios.post(`http://${address}:5000/report/daily`, {
         from_date: fromDate,
         to_date: toDate,
         campaign_id: campaignId,
@@ -38,7 +38,7 @@ module.exports = async (address, fromDate, toDate, campaignId, client_id, advert
         config
     );
 
-    const res3 = await axios.post(`http://${address}:5001/report/day`, {
+    const res3 = await axios.post(`http://${address}:5000/report/day`, {
         from_date: fromDate,
         to_date: toDate,
         campaign_id: campaignId,
@@ -48,7 +48,7 @@ module.exports = async (address, fromDate, toDate, campaignId, client_id, advert
         config
     );
 
-    const res4 = await axios.post(`http://${address}:5001/report/time`, {
+    const res4 = await axios.post(`http://${address}:5000/report/time`, {
         from_date: fromDate,
         to_date: toDate,
         campaign_id: campaignId,
@@ -58,7 +58,7 @@ module.exports = async (address, fromDate, toDate, campaignId, client_id, advert
         config
     );
 
-    const res5 = await axios.post(`http://${address}:5001/report/vehicletype`, {
+    const res5 = await axios.post(`http://${address}:5000/report/vehicletype`, {
         from_date: fromDate,
         to_date: toDate,
         campaign_id: campaignId,
@@ -68,7 +68,7 @@ module.exports = async (address, fromDate, toDate, campaignId, client_id, advert
         config
     );
 
-    const res6 = await axios.post(`http://${address}:5001/report/dwelltime`, {
+    const res6 = await axios.post(`http://${address}:5000/report/dwelltime`, {
         from_date: fromDate,
         to_date: toDate,
         campaign_id: campaignId,

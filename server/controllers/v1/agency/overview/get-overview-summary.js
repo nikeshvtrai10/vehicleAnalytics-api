@@ -9,7 +9,8 @@ require('dotenv').config();
 module.exports = async (req, res, next) => {
   try {
     const reqPermission = 'overview.list';
-    let address = process.env.DB_HOST;
+    let address = process.env.BQ_API;
+    console.log(address)
     if (req.decoded.permissions.includes(reqPermission)) {
       const fromDate = req.body.from_date;
       const toDate = req.body.to_date;
