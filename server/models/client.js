@@ -23,6 +23,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Client.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
     agencyId: {
       type: DataTypes.INTEGER,
       allowNull: false

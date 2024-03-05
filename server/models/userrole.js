@@ -9,24 +9,27 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      
+
     }
   }
-  UserRole.init(
-    {
-      userId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      roleId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+  UserRole.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
     },
-    {
-      sequelize,
-      modelName: "UserRole",
-    }
-  );
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    roleId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  }, {
+    sequelize,
+    modelName: "UserRole",
+  });
   return UserRole;
 };

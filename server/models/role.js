@@ -28,26 +28,23 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  Role.init(
-    {
-      id: {
-        primaryKey: true,
-        allowNull: false,
-        type: DataTypes.STRING,
-      },
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      description: {
-        allowNull: false,
-        type: DataTypes.STRING,
-      },
+  Role.init({
+    id: {
+      primaryKey: true,
+      allowNull: false,
+      type: DataTypes.STRING,
     },
-    {
-      sequelize,
-      modelName: "Role",
-    }
-  );
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      allowNull: false,
+      type: DataTypes.STRING,
+    },
+  }, {
+    sequelize,
+    modelName: "Role",
+  });
   return Role;
 };

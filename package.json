@@ -1,13 +1,13 @@
 {
   "name": "trafficanalysisbillboard",
   "version": "1.0.0",
-  "description": "Traffic Analysis for Billboards",
+  "description": "Vehicle Analytics for Billboard Media",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/app.js"
   },
-  "author": "Aashna Shrestha",
+  "author": "Nikesh Bhattarai",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/storage": "^6.9.5",

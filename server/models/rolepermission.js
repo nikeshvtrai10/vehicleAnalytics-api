@@ -19,21 +19,24 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  RolePermission.init(
-    {
-      roleId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      permissionId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+  RolePermission.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
     },
-    {
-      sequelize,
-      modelName: "RolePermission",
-    }
-  );
+    roleId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    permissionId: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  }, {
+    sequelize,
+    modelName: "RolePermission",
+  });
   return RolePermission;
 };

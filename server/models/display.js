@@ -29,6 +29,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Display.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
     agencyId: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -37,11 +43,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    aspectRatio:{
+    aspectRatio: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    photoUrl:{
+    photoUrl: {
       type: DataTypes.STRING,
       allowNull: true
     },

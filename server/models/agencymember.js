@@ -23,6 +23,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   AgencyMember.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
     roleId: {
       type: DataTypes.STRING,
       allowNull: false

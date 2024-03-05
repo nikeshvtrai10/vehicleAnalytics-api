@@ -33,11 +33,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Agency.init({
-    id:{
-        type:DataTypes.INTEGER,
-        primaryKey:true,
-        allowNull:false,
-        autoIncrement:true,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,

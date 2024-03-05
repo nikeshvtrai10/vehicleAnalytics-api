@@ -22,6 +22,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Timeslot.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
     advertisementId: {
       type: DataTypes.STRING,
       allowNull: false

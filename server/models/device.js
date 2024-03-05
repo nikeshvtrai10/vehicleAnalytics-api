@@ -23,6 +23,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Device.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
     displayId: {
       type: DataTypes.INTEGER,
       allowNull: false

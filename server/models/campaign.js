@@ -20,38 +20,41 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  Campaign.init(
-    {
-      clientId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      startDate: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-      endDate: {
-        type: DataTypes.DATE,
-        allowNull: true,
-      },
-      description: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-      active: {
-        type: DataTypes.BOOLEAN,
-        allowNull: true,
-        defaultValue: true,
-      },
+  Campaign.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
     },
-    {
-      sequelize,
-      modelName: "Campaign",
-    }
-  );
+    clientId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    startDate: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    endDate: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    active: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: true,
+    },
+  }, {
+    sequelize,
+    modelName: "Campaign",
+  });
   return Campaign;
 };

@@ -21,6 +21,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true,
+    },
     firstName: {
       type: DataTypes.STRING,
       allowNull: false
@@ -51,19 +57,19 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: true,
     },
   },
-  {
-    sequelize,
-    modelName: "User",
-    hooks: {
-      beforeCreate: (u) => {
-        const salt = bcrypt.genSaltSync(8);
-        u.password = bcrypt.hashSync(u.password, salt);
+    {
+      sequelize,
+      modelName: "User",
+      hooks: {
+        beforeCreate: (u) => {
+          const salt = bcrypt.genSaltSync(8);
+          u.password = bcrypt.hashSync(u.password, salt);
+        },
       },
-    },
-  }
-);
-User.prototype.validPassword = function (password) {
-  return bcrypt.compareSync(password, this.password);
-};
-return User;
+    }
+  );
+  User.prototype.validPassword = function (password) {
+    return bcrypt.compareSync(password, this.password);
+  };
+  return User;
 };

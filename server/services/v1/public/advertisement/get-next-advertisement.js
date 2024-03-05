@@ -1,4 +1,6 @@
 const {
+    Client,
+    Campaign,
     Advertisement,
     Timeslot
 } = require("../../../../models");
@@ -26,9 +28,21 @@ module.exports = async (requiredObj) => {
         include: [
             {
                 as: 'Advertisements',
-                model: Advertisement
-            }
-        ]
+                model: Advertisement,
+                include: [
+                    {
+                        as: 'AdCampaigns',
+                        model: Campaign,
+                        include: [
+                            {
+                                as: 'Clients',
+                                model: Client,
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
     });
 
     if (!timeslot) {
