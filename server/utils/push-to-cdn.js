@@ -14,7 +14,7 @@ const storage = new Storage({
   projectId: 'adsinsight',
 });
 
-const bucket = storage.bucket('adsinsight');
+const bucket = storage.bucket('adsinsight-clients');
 
 /**
  * Push image to Google Cloud Storage

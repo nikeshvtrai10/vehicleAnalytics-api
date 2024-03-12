@@ -15,6 +15,7 @@ module.exports = async (queryObj) => {
       active: true,
     },
   });
+
   if (!advertisement) {
     throw new ValidationError("Unable to find the advertisement.", 404);
   }

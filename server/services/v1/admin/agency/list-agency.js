@@ -1,4 +1,4 @@
-const { Agency, AgencyMember } = require("../../../../models");
+const { Agency, AgencyMember, Display } = require("../../../../models");
 
 /**
  * List all Agencys
@@ -18,7 +18,16 @@ module.exports = async () => {
           "id", "firstName", "middleName", "lastName", "email"
         ],
         where: {active: true}
-      }
+      },
+      {
+        as: "Displays",
+        model: Display,
+        attributes: [
+          "id",
+          "location",
+          "aspectRatio",
+        ]
+      },
     ]
   });
 

@@ -13,4 +13,4 @@ module.exports = async () => {
   });
 
   return campaigns;
-};
+};                                                           

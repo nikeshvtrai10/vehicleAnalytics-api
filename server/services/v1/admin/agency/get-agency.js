@@ -1,4 +1,4 @@
-const { Agency, AgencyMember } = require("../../../../models");
+const { Agency, AgencyMember, Display } = require("../../../../models");
 
 const { ValidationError } = require("../../../../errors");
 
@@ -22,7 +22,16 @@ module.exports = async (agencyId) => {
           "id", "firstName", "middleName", "lastName", "email"
         ],
         where: {active: true}
-      }
+      },
+      {
+        as: "Displays",
+        model: Display,
+        attributes: [
+          "id",
+          "location",
+          "aspectRatio",
+        ]
+      },
     ]
   });
   if (!agency) {

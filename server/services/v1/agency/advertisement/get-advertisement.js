@@ -16,7 +16,6 @@ module.exports = async (queryObj) => {
       {
         model: Campaign,
         as: "AdCampaigns",
-        attributes: ["name"],
         required: true,
         include: [
           {
