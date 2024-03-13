@@ -1,4 +1,8 @@
-const { Advertisement, Client, Campaign } = require("../../../../models");
+const {
+  Advertisement,
+  Client,
+  Campaign
+} = require("../../../../models");
 
 /**
  * List all Advertisements
@@ -10,25 +14,21 @@ module.exports = async (queryObj) => {
     where: {
       active: true,
     },
-    include: [
-      {
-        model: Campaign,
-        as: "AdCampaigns",
-        attributes: ["name"],
+    include: [{
+      model: Campaign,
+      as: "AdCampaigns",
+      attributes: ["name", "startDate", "endDate"],
+      required: true,
+      include: [{
+        model: Client,
+        as: "Clients",
         required: true,
-        include: [
-          {
-            model: Client,
-            as: "Clients",
-            required: true,
-            attributes: ["name"],
-            where: {
-              agencyId: queryObj.agencyId,
-            },
-          },
-        ],
-      },
-    ],
+        attributes: ["name"],
+        where: {
+          agencyId: queryObj.agencyId,
+        },
+      }, ],
+    }, ],
   });
 
   return advertisements;

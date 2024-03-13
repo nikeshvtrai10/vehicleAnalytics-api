@@ -19,6 +19,8 @@ module.exports = async (queryObj, agencyId) => {
 
   const validClientIds = validClients.map((item) => item.dataValues.id);
 
+  console.log(validClientIds)
+
   if (!validClientIds.includes(+queryObj.clientId)) {
     throw new ValidationError("No Permission", 403);
   }
