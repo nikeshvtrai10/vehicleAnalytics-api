@@ -25,6 +25,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      ownerContact: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      ownerCitizenship: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       active: {
         type: Sequelize.BOOLEAN,
         allowNull: false

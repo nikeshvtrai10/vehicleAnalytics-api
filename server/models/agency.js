@@ -55,6 +55,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    ownerContact: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    ownerCitizenship: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     active: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
