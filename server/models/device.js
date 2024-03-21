@@ -37,14 +37,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    serialNumber: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
     active: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: true
-    },
-    serialNumber: {
-      type: DataTypes.STRING,
-      allowNull: true
     },
     createdAt: {
       allowNull: false,

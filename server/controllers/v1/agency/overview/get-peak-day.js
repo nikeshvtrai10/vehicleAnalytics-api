@@ -14,14 +14,16 @@ module.exports = async (req, res, next) => {
       const fromDate = req.body.from_date;
       const toDate = req.body.to_date;
       const campaignId = req.body.campaign_id;
-      const client_id = req.body.client_id;
+      const clientId = req.body.client_id;
+      const displayId = req.body.display_id;
       if (fromDate && toDate) {
         const data = await overviewService.getPeakDay(
           address,
           fromDate,
           toDate,
           campaignId,
-          client_id,
+          clientId,
+          displayId,
         );
         res.status(httpStatus.OK).json({
           message: 'Success',

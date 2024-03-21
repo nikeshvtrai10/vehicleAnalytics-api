@@ -1,11 +1,6 @@
-const {
-    Stream,
-    StreamZone
-} = require("../../../../models");
+const { Stream, StreamZone } = require("../../../../models");
 
-const {
-    ValidationError
-} = require("../../../../errors");
+const { ValidationError } = require("../../../../errors");
 
 /**
  * Get a Stream

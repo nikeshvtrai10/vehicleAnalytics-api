@@ -23,13 +23,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      serialNumber: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+      },
       active: {
         type: Sequelize.BOOLEAN,
         allowNull: false
-      },
-      serialNumber: {
-        type: Sequelize.STRING,
-        allowNull: true
       },
       createdAt: {
         allowNull: false,

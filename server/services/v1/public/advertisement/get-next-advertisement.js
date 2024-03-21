@@ -5,9 +5,7 @@ const {
     Timeslot
 } = require("../../../../models");
 
-const {
-    ValidationError
-} = require("../../../../errors");
+const { ValidationError } = require("../../../../errors");
 
 const moment = require("moment");
 /**

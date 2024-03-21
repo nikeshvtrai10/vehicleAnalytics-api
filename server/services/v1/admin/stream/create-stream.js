@@ -10,15 +10,15 @@ const { ValidationError } = require("../../../../errors");
  */
 
 module.exports = async (queryObj) => {
-  const nameExists = await Stream.findOne({
+  const idExists = await Stream.findOne({
     where: {
-      username: queryObj.username,
+      id: queryObj.id,
       active: true,
     },
   });
 
-  if (nameExists) {
-    throw new ValidationError("Duplicate Stream Name", 403);
+  if (idExists) {
+    throw new ValidationError("Duplicate Stream Id", 403);
   }
 
   const stream = await Stream.create({ ...queryObj });
