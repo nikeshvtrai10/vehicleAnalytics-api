@@ -3,7 +3,7 @@ const loginService = require("../../../../services/v1/agency/login");
 
 module.exports = async (req, res, next) => {
   try {
-    const { agencyMember, roles, permission } = await loginService.login(req.body);
+    const { agencyMember, agency, roles, permission } = await loginService.login(req.body);
 
     const permissions = [];
 
@@ -30,6 +30,7 @@ module.exports = async (req, res, next) => {
       message: "success",
       data: {
         agencyMember: restMember,
+        agency,
         permissions,
         token,
       },

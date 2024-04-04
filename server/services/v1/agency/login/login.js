@@ -31,6 +31,12 @@ module.exports = async (queryObj) => {
     },
   });
   
+  const agency = await Agency.findOne({
+    where: {
+      id: agencyMember.dataValues.agencyId,
+    },
+  });
+
   const roles = [role.dataValues.id];
  
   const permission = await RolePermission.findAll({
@@ -43,5 +49,5 @@ module.exports = async (queryObj) => {
   });
   
 
-  return { agencyMember, roles, permission };
+  return { agencyMember, agency, roles, permission };
 };
